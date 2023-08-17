@@ -17,7 +17,7 @@ test('Validation', async ({ page }) => {
     await submitbtn.click();
 
     await admintbtn.click();
-    console.log(await items.first().textContent());
+    await page.waitForLoadState('networkidle');
     console.log(await items.allTextContents());
     await addbtn.click();
 
