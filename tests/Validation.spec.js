@@ -8,6 +8,8 @@ test('Validation', async ({ page }) => {
     const admintbtn = page.locator("body > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > aside:nth-child(1) > nav:nth-child(1) > div:nth-child(2) > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1) > span:nth-child(2)");
     const addbtn = page.locator("button[class='oxd-button oxd-button--medium oxd-button--secondary']");
 
+    const items = page.locator("[class ='oxd-label']");
+
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
 
     await userName.type("Admin");
@@ -15,6 +17,10 @@ test('Validation', async ({ page }) => {
     await submitbtn.click();
 
     await admintbtn.click();
+    console.log(await items.first().textContent());
+    console.log(await items.allTextContents());
     await addbtn.click();
+
+
 
 })
