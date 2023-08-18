@@ -22,7 +22,7 @@ test('Child Window Handles', async ({ browser }) => {
     console.log(text);
 
     let elements = await newPage.locator("div[class='category-cards'] div:nth-child(1) div:nth-child(1) div:nth-child(3) h5:nth-child(1)");
-    elements.click();
+    await elements.click();
 
 
 
