@@ -18,9 +18,12 @@ test('Child Window Handle', async ({ browser }) => {
 
     ])
 
-    console.log(await newPage.locator(".red").textContent());
+    let text = await newPage.locator(".red").textContent();
+    console.log(text);
+    let userName = text.substring(26, 48);
 
+   await page.locator("#username").type(userName);
 
-    // await page.pause();
+    await page.pause();
 
 })
