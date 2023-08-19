@@ -1,9 +1,17 @@
-import { test, expect } from '@playwright/test';
+const { expect, test } = require('@playwright/test')
 
-test('has title', async ({ page }) => {
-  await page.goto('https://www.google.com/');
+test('Title Validation', async ({ page }) => {
 
-  // Expect a title "to contain" a substring.
-   await expect(page).toHaveTitle('Google');
-});
+  await page.goto('https://demoblaze.com/');
 
+  console.log('Page Title is : ', await page.title());
+
+  await expect(page).toHaveTitle('STORE');
+
+  await expect(page).toHaveURL('https://demoblaze.com/');
+
+  await page.close();
+
+
+
+})
