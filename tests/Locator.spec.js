@@ -5,7 +5,7 @@ const { test, expect } = require('@playwright/test')
 test('Locators', async ({ page }) => {
 
     await page.goto('https://demoblaze.com/');
-
+    
     // Click Login Button
     //await page.locator('id=login2').click();
     await page.click('id=login2');
