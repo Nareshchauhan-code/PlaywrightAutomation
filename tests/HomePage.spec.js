@@ -1,6 +1,6 @@
 const { expect, test } = require('@playwright/test')
 
-test('Title Validation', async ({ page }) => {
+test.only('Title Validation', async ({ page }) => {
 
   await page.goto('https://demoblaze.com/');
 
