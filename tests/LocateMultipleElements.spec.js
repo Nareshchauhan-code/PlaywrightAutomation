@@ -18,7 +18,7 @@ test('Multiple Elements Locate', async ({ page }) => {
 
     await page.goto('https://demoblaze.com/');
 
-    page.waitForSelector("//div[@id='tbodyid']//div//h4/a")
+    await page.waitForSelector("//div[@id='tbodyid']//div//h4/a")
 
     const products = await page.$$("//div[@id='tbodyid']//div//h4/a");
 
