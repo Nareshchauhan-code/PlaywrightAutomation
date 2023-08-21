@@ -11,9 +11,10 @@ test('Assertions ', async ({ page }) => {
 
     //toHaveTitle()
     await expect(page).toHaveTitle(title);
-    const logo = await page.locator(".header-logo");
+    await expect(page).not.toHaveTitle('wdsdaffsdvbv');
 
     // toBeVisible()
+    const logo = await page.locator(".header-logo");
     await expect(logo).toBeVisible();
 
     //toBeEnabled()
@@ -26,8 +27,9 @@ test('Assertions ', async ({ page }) => {
     await expect(radiobtn).toBeChecked();
     const checkBox = await page.locator("#Newsletter").first();
     await expect(checkBox).toBeChecked();
-    await page.pause();
 
-
+    //toHaveAttribute()
+    const registerBtn = page.locator("#register-button");
+    await expect(registerBtn).toHaveAttribute('type', 'submit');
 
 })
