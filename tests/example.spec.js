@@ -14,7 +14,7 @@ test.beforeAll(async ({ browser }) => {
 
 test.afterAll(async () => {
 
-    await context.tracing.stop({ path: '.\PlaywrightAutomation\test-results\locator.trace.zip' })
+    await context.tracing.stop({ path: 'locator.trace.zip' })
 
 })
 
