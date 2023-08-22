@@ -23,7 +23,6 @@ test('Drop Down Handle', async ({ page }) => {
     const drpOption = await page.locator("//select[@id='country' and @class='form-control']/option");
     await expect(drpOption).toHaveCount(10);
     // 2nd way
-
     const allOptions = await page.$$("//select[@id='country' and @class='form-control']/option");
     console.log("Total Options : ", await allOptions.length)
 
